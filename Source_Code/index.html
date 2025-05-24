@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hybrid Quantum-Classical Brain Tumor Classifier</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+    <div class="container header-container">
+        <div class="sponsor-logo-container">
+            <img src="logo.png" alt="Sponsored by Unicare Hospital" class="sponsor-logo">
+        </div>
+        <div class="title-container">
+            <h1>Brain Tumor Classification System</h1>
+            <div class="subtitle">Quantum Transfer Learning</div>
+        </div>
+    </div>
+</header>
+
+
+    <div class="container">
+        <div class="main-content">
+            <div class="card">
+                <h2>Test an Image</h2>
+                <div class="input-section">
+                    <label for="model-select">Select Model:</label>
+                    <select id="model-select">
+                        <option value="resnet">ResNet18 Hybrid</option>
+                        <option value="mobilenet">MobileNetV2 Hybrid</option>
+                        <option value="inception">InceptionV3 Hybrid</option>
+                        <option value="vgg">VGG16 Hybrid</option>
+                    </select>
+                </div>
+
+                <div class="file-upload">
+                    <label for="image-upload" class="file-upload-label">
+                        <i class="fas fa-cloud-upload-alt">📤</i>
+                        <span>Drag & drop an image or click to browse</span>
+                        <small>Supported formats: JPG, PNG, JPEG</small>
+                    </label>
+                    <input type="file" id="image-upload" accept="image/*">
+                </div>
+
+                <div id="preview-container">
+                    <img id="image-preview" src="" alt="Preview">
+                </div>
+
+                <button id="classify-btn" disabled>Classify Image</button>
+
+                <div class="model-info">
+                    <h3>Model Information</h3>
+                    <p><strong>Architecture:</strong> <span id="model-architecture">ResNet18 with Quantum Layer</span></p>
+                    <p><strong>Quantum Qubits:</strong> 4</p>
+                    <p><strong>Quantum Layers:</strong> 2</p>
+                    <p><strong>Best Validation Accuracy:</strong> <span id="model-accuracy">95.79%</span></p>
+                </div>
+
+                <div class="log-window">
+                    <div class="log-entry log-info">[System] Ready to analyze brain MRI scans</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Classification Results</h2>
+                <div class="loading">
+                    <div class="spinner"></div>
+                    <p>Processing image...</p>
+                </div>
+
+                <div id="results-container" class="results-container">
+                    <p>Upload an image and click "Classify Image" to see results.</p>
+                </div>
+
+                <div class="chart-container">
+                    <canvas id="results-chart"></canvas>
+                </div>
+
+                <div class="class-description">
+                    <h3>Class Information</h3>
+                    <p><strong>Class 1: </strong><a href="https://en.wikipedia.org/wiki/Meningioma">Meningioma</a> - A tumor that arises from the meninges, the membranes that surround the brain and spinal cord.</p>
+                    <p><strong>Class 2: </strong><a href="https://en.wikipedia.org/wiki/Glioma">Glioma</a> - A type of tumor that occurs in the brain and spinal cord.</p>
+                    <p><strong>Class 3: </strong><a href="https://www.mayoclinic.org/diseases-conditions/pituitary-tumors/symptoms-causes/syc-20350548">Pituitary Tumor</a> - A tumor that forms in the pituitary gland, a small gland located at the base of the brain.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
